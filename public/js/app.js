@@ -1,5 +1,3 @@
-console.log("Client side Javascript Loaded");
-
 // Importing Elements from html
 const address = document.querySelector(".address");
 const form = document.querySelector(".search");
