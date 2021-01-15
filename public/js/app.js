@@ -47,12 +47,11 @@ navigator.geolocation.getCurrentPosition((position) => {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
   address.textContent = "Loading...";
-  fetch(
-    `http://localhost:3000/weather?latitude=${latitude}&longitude=${longitude}`
-  ).then((response) =>
-    response.json().then((data) => {
-      printWeather(data);
-    })
+  fetch(`/weather?latitude=${latitude}&longitude=${longitude}`).then(
+    (response) =>
+      response.json().then((data) => {
+        printWeather(data);
+      })
   );
 });
 
@@ -65,11 +64,9 @@ form.addEventListener("submit", (e) => {
     return (address.textContent = "Please provide an address");
   }
 
-  fetch(`http://localhost:3000/weather?address=${input.value}`).then(
-    (response) => {
-      response.json().then((data) => {
-        printWeather(data);
-      });
-    }
-  );
+  fetch(`/weather?address=${input.value}`).then((response) => {
+    response.json().then((data) => {
+      printWeather(data);
+    });
+  });
 });
