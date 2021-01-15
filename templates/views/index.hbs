@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/weather.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Skyviews | Weather App</title>
+</head>
+
+<body>
+    {{!-- Header Partial --}}
+    {{>header}}
+
+    <main class="container">
+        <div class="bg-img"><img src="/img/sky-2543595.png" /></div>
+
+        <h2 class="title">{{title}}</h2>
+        <div class="location flex-bt">
+            <p class="address">Location</p>
+            <form class="search flex-bt">
+                <input type="text" placeholder="Location" />
+                <button class="search-btn">Search</button>
+            </form>
+        </div>
+        <div class="forecast flex-bt">
+            <div class="forecast-primary flex-bt-c">
+                <h3 class="temperature"><span>Temp </span>°C</h3>
+                <div class="summary">
+                    <h4>Description</h4>
+                </div>
+            </div>
+            <div class="forecast-secondary flex-bt-c">
+                <p>Wind - <span class="wind"> - </span>Km/h ( <span class="dir"> - </span> )</p>
+                <p>Humidity - <span class="humidity">-</span>%</p>
+                <p>Feels Like - <span class="feels-like">-</span>°C</p>
+            </div>
+        </div>
+    </main>
+
+    {{!-- Footer Partial --}}
+    {{>footer}}
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
